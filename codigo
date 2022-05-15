@@ -47,16 +47,16 @@ class Transferencia{
 		b.saldo += valor_transferencia;
 		System.out.println("Saldo do emissor: R$"+a.saldo);
 		System.out.println("Saldo do receptor: R$"+b.saldo);
-	}
+	} // transferencia
 	}
 	public boolean validade(Emissor a, Receptor b){
 		if(a.conta_emissor == b.conta_receptor){
 			System.out.println("Sua transferência não foi completada pois não é autorizado a transferência para a mesma conta");
 			return false;
-		}
-		if(tipo_transferencia.contentEquals("PIX") && valor_transferencia<= 5000) return true;
-		if(tipo_transferencia.contentEquals("TED") && valor_transferencia> 5000 && valor_transferencia<= 10000) return true;
-		if(tipo_transferencia.contentEquals("DOC")&& valor_transferencia>10000) return true;
+		} // validade de conta
+		if(tipo_transferencia.contentEquals("PIX") && valor_transferencia<= 5000) return true; // validade de pix
+		if(tipo_transferencia.contentEquals("TED") && valor_transferencia> 5000 && valor_transferencia<= 10000) return true; // validade de ted
+		if(tipo_transferencia.contentEquals("DOC")&& valor_transferencia>10000) return true; // validade de doc
 	
 	return false;
 	}
